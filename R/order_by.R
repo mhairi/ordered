@@ -20,12 +20,12 @@
 #'
 #' @examples
 #' # Ordering a factor where the values are unique
-#' order_factor_by(letters[1:3], 1:3)
+#' order_by(letters[1:3], 1:3)
 #'
 #' # Ordering a factor by a variable that provides the levels
-#' order_factor_by(c('a', 'a', 'b'), c(1, 1, 2))
+#' order_by(c('a', 'a', 'b'), c(1, 1, 2))
 #'
-order_factor_by <- function(factor, order, rev = FALSE){
+order_by <- function(factor, order, rev = FALSE){
 
   # Checking and coerceing inputs
   if (!inherits(order, 'numeric')) order <- as.numeric(order)
@@ -40,7 +40,7 @@ order_factor_by <- function(factor, order, rev = FALSE){
   pairs <- data.frame(factor = factor, order = order)
   unique_pairs <- pairs[!duplicated(pairs),]
 
-  if (nrow(unique_pairs) != length(unique(factor))) stop('More than one value of order for each value of factor. Do you want to use order_factor_by_summary?')
+  if (nrow(unique_pairs) != length(unique(factor))) stop('More than one value of order for each value of factor. Do you want to use order_by_summary?')
 
   levels <- unique_pairs$factor[order(unique_pairs$order)]
 
@@ -72,8 +72,8 @@ order_factor_by <- function(factor, order, rev = FALSE){
 #' @examples
 #' factor = letters[rep(c(1, 2), 2)]
 #' order = 1:4
-#' order_factor_by_summary(f, o)
-order_factor_by_summary <- function(factor,
+#' order_by_summary(f, o)
+order_by_summary <- function(factor,
                                     order,
                                     summary = sum,
                                     rev = FALSE,
