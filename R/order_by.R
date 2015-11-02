@@ -13,7 +13,7 @@
 #'
 #' @param factor A factor or character vector.
 #' @param order A numeric variable (or coerceable  to numeric).
-#' @param rev Set to TRUE to reverse the ordering.
+#' @param desc Set to TRUE to order descending.
 #'
 #' @return An ordered factor.
 #' @export
@@ -25,7 +25,7 @@
 #' # Ordering a factor by a variable that provides the levels
 #' order_by(c('a', 'a', 'b'), c(1, 1, 2))
 #'
-order_by <- function(factor, order, rev = FALSE){
+order_by <- function(factor, order, desc = FALSE){
 
   # Checking and coerceing inputs
   if (!inherits(order, 'numeric')) order <- as.numeric(order)
@@ -34,7 +34,7 @@ order_by <- function(factor, order, rev = FALSE){
     stop('An element of order is missing while the element of factor is not missing')
   }
 
-  type_checking(factor, order, rev)
+  type_checking(factor, order, desc)
 
   # Need to remove duplicates
   pairs <- data.frame(factor = factor, order = order)
@@ -44,7 +44,7 @@ order_by <- function(factor, order, rev = FALSE){
 
   levels <- unique_pairs$factor[order(unique_pairs$order)]
 
-  if (rev) levels <- rev(levels)
+  if (desc) levels <- rev(levels)
 
   return(factor(factor, levels = levels, ordered = TRUE))
 }
@@ -61,7 +61,7 @@ order_by <- function(factor, order, rev = FALSE){
 #'
 #' @param factor A factor or character vector.
 #' @param order A numeric.
-#' @param rev Set to TRUE to reverse the ordering.
+#' @param desc Set to TRUE to order descending.
 #' @param summary A function to apply to each subset of order
 #' which will return a single number
 #' @param ... Futher arguments to summary
@@ -76,7 +76,7 @@ order_by <- function(factor, order, rev = FALSE){
 order_by_summary <- function(factor,
                                     order,
                                     summary = sum,
-                                    rev = FALSE,
+                                    desc = FALSE,
                                     ...){
 
   # Checking and coerceing inputs
@@ -84,7 +84,7 @@ order_by_summary <- function(factor,
 
   if (!inherits(summary, 'function')) stop('summary should be a function')
 
-  type_checking(factor, order, rev)
+  type_checking(factor, order, desc)
 
   # Summarise
   summarised <- tapply(order, factor, summary, ...)
@@ -93,7 +93,7 @@ order_by_summary <- function(factor,
 
   levels <- names(summarised)[order(summarised)]
 
-  if (rev) levels <- rev(levels)
+  if (desc) levels <- rev(levels)
 
   return(factor(factor, levels = levels, ordered = TRUE))
 }
