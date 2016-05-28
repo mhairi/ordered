@@ -72,12 +72,12 @@ order_by <- function(factor, order, desc = FALSE){
 #' @examples
 #' factor = letters[rep(c(1, 2), 2)]
 #' order = 1:4
-#' order_by_summary(f, o)
+#' order_by_summary(factor, order)
 order_by_summary <- function(factor,
-                                    order,
-                                    summary = sum,
-                                    desc = FALSE,
-                                    ...){
+                              order,
+                              summary = sum,
+                              desc = FALSE,
+                              ...){
 
   # Checking and coerceing inputs
   if (!inherits(order, 'numeric')) order <- as.numeric(order)

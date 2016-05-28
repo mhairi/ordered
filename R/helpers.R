@@ -1,4 +1,4 @@
-type_checking <- function(factor, order, desc){
+type_checking <- function(factor, order = numeric(length(factor)), desc = TRUE){
   # Standard type checking
   if (length(factor) != length(order)){
     stop('factor and order not the same length')
@@ -9,7 +9,7 @@ type_checking <- function(factor, order, desc){
   if (!inherits(order, 'numeric')){
     stop('order must be numeric')
   }
-  if (!inherits(desc, 'logical')){
+  if (!inherits(desc, 'logical') | length(desc) > 1){
     stop('desc must be TRUE or FALSE')
   }
   return(NULL)
