@@ -9,7 +9,7 @@ order_by(factor, order, desc = FALSE)
 \arguments{
 \item{factor}{A factor or character vector.}
 
-\item{order}{A numeric variable (or coerceable  to numeric).}
+\item{order}{A numeric variable (or coercible  to numeric).}
 
 \item{desc}{Set to TRUE to order descending.}
 }
@@ -18,16 +18,16 @@ An ordered factor.
 }
 \description{
 The factor and the order must be of the same length
-and each value of factor must corrispond with one
+and each value of factor must correspond with one
 value of order.
 }
 \details{
 This is useful when you have unique values of factor
 and numeric, but can be useful in other circumstances
-when another variable corrisponds to the ordering of the
+when another variable corresponds to the ordering of the
 factor.
 
-Ties are arbitarly ordered for unique factors.
+Ties are arbitrarily ordered for unique factors.
 }
 \examples{
 # Ordering a factor where the values are unique

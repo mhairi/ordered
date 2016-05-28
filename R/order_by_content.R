@@ -4,13 +4,13 @@
 #' orders on symbolic numbers: 1, 2, 3 etc.
 #'
 #' Numbers present in the factor levels will be extracted and
-#' used to order the factor. If more than one continous number is
+#' used to order the factor. If more than one continuous number is
 #' present in the factor level then the first number will be used for
 #' numbering.
 #'
-#' Ties between two different factor levels are ordered arbitarly.
+#' Ties between two different factor levels are ordered arbitrarily.
 #'
-#' Factor levels without numbers are ordered lowest artibarily.
+#' Factor levels without numbers are ordered lowest arbitrarily.
 #'
 #' @param factor The factor you want to order
 #' @param desc Set to TRUE to order descending.

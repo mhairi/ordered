@@ -1,18 +1,18 @@
 #' Order a factor by the levels of another variable.
 #'
 #' The factor and the order must be of the same length
-#' and each value of factor must corrispond with one
+#' and each value of factor must correspond with one
 #' value of order.
 #'
 #' This is useful when you have unique values of factor
 #' and numeric, but can be useful in other circumstances
-#' when another variable corrisponds to the ordering of the
+#' when another variable corresponds to the ordering of the
 #' factor.
 #'
-#' Ties are arbitarly ordered for unique factors.
+#' Ties are arbitrarily ordered for unique factors.
 #'
 #' @param factor A factor or character vector.
-#' @param order A numeric variable (or coerceable  to numeric).
+#' @param order A numeric variable (or coercible  to numeric).
 #' @param desc Set to TRUE to order descending.
 #'
 #' @return An ordered factor.
@@ -50,21 +50,21 @@ order_by <- function(factor, order, desc = FALSE){
 }
 
 
-#' Order a factor by the summary statitic of another variable.
+#' Order a factor by the summary statistic of another variable.
 #'
 #' The factor and the order must be of the same length. The
 #' order is summarised by the levels of factor, using the
 #' summary function. The outcome of summarising is used
 #' to order the factor variable.
 #'
-#' Ties are arbitarly ordered.
+#' Ties are arbitrarily ordered.
 #'
 #' @param factor A factor or character vector.
 #' @param order A numeric.
 #' @param desc Set to TRUE to order descending.
 #' @param summary A function to apply to each subset of order
 #' which will return a single number
-#' @param ... Futher arguments to summary
+#' @param ... Further arguments to summary
 #'
 #' @return An ordered factor
 #' @export

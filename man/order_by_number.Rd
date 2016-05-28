@@ -20,13 +20,13 @@ orders on symbolic numbers: 1, 2, 3 etc.
 }
 \details{
 Numbers present in the factor levels will be extracted and
-used to order the factor. If more than one continous number is
+used to order the factor. If more than one continuous number is
 present in the factor level then the first number will be used for
 numbering.
 
-Ties between two different factor levels are ordered arbitarly.
+Ties between two different factor levels are ordered arbitrarily.
 
-Factor levels without numbers are ordered lowest artibarily.
+Factor levels without numbers are ordered lowest arbitrarily.
 }
 \examples{
 f <- c('group_1', 'group_2', 'group_3')

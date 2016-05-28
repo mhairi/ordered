@@ -2,7 +2,7 @@
 % Please edit documentation in R/order_by.R
 \name{order_by_summary}
 \alias{order_by_summary}
-\title{Order a factor by the summary statitic of another variable.}
+\title{Order a factor by the summary statistic of another variable.}
 \usage{
 order_by_summary(factor, order, summary = sum, desc = FALSE, ...)
 }
@@ -16,7 +16,7 @@ which will return a single number}
 
 \item{desc}{Set to TRUE to order descending.}
 
-\item{...}{Futher arguments to summary}
+\item{...}{Further arguments to summary}
 }
 \value{
 An ordered factor
@@ -28,7 +28,7 @@ summary function. The outcome of summarising is used
 to order the factor variable.
 }
 \details{
-Ties are arbitarly ordered.
+Ties are arbitrarily ordered.
 }
 \examples{
 factor = letters[rep(c(1, 2), 2)]
